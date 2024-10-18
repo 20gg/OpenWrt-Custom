@@ -14,13 +14,13 @@
 # Sys config modification
 #=========================================
 echo '修改网关地址'
-sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 # echo '修改时区'
 # sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
 echo '修改机器名称'
-sed -i 's/OpenWrt/Gee_1s/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/STEAM/g' package/base-files/files/bin/config_generate
 
 target_inf() {
     #=========================================
@@ -155,7 +155,7 @@ target_inf >> .config
 # 根据输入参数增加内容
 if [[ $1 == clean* ]]; then
     echo "[洁净配置] 仅该型号的默认功能"
-    config_clean >> .config
+     >> .config
 elif [[ $1 == basic* ]]; then
     echo "[基本配置] 包含一些基础增强"
     config_basic >> .config
