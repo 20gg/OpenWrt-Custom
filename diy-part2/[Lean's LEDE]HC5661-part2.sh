@@ -167,6 +167,6 @@ fi
 sed -i 's/^[ \t]*//g' .config
 # make defconfig
 # diff .config default.config --color
-
+cat .config
 # diff的返回值1会导致github actions出错，用这个来盖过去
 echo "[脚本完成] diy-part2.sh 结束，已生成 .config 文件"
