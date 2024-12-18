@@ -56,7 +56,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_TRANSFER: true
-  UPLOAD_RELEASE: true
+  UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -149,7 +149,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
       
     - name: add Customer script
-      run: | 
+      run: |
         cd openwrt
         mkdir -p files/www/cgi-bin
         cp -r $GITHUB_WORKSPACE/cgi/* files/www/cgi-bin/
