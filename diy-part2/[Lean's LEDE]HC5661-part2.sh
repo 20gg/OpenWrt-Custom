@@ -25,8 +25,8 @@ sed -i 's/LEDE/Sichuang/g' package/base-files/luci2/bin/config_generate
 echo '修改ssid和密码'
 sed -i '/set wireless.default_radio${devidx}.ssid=LEDE/a set wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/LEDE/Sichuang_QunKong/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/set wireless.default_radio${devidx}.encryption=none/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
+sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+ 
 
 target_inf() {
     #=========================================
