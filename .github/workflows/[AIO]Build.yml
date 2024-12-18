@@ -18,13 +18,13 @@ on:
       device_choice:
         description: '选择型号(device-env.sh中的编号)'
         required: false
-        default: 5
+        default: 1
         type: number
       config_tag:
         type: choice
         required: true
         description: '选择配置版本'
-        default: 'func'
+        default: 'clean'
         options:
           - clean
           - basic
