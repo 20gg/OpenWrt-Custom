@@ -213,7 +213,8 @@ jobs:
         # 启动编译任务
         cd openwrt
         echo -e "Initiate Compilation. Try $(($(nproc)+1)) thread first..."
-        make -j $(($(nproc)+1)) || make -j1 || make -j1 V=s.
+        # make -j $(($(nproc)+1)) || make -j1 || make -j1 V=s.
+        make -j1 V=s.
         echo "TimeStamp=$(date +"%Y%m%d-%H%M")" >> $GITHUB_ENV
         # 复制配置文件到 bin/targets/[arch]/[subtarget]/ 目录，最终一并打包
         SUBTARGET_FOLDER=$(realpath bin/targets/*/*)
