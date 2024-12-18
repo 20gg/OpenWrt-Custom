@@ -148,13 +148,6 @@ jobs:
     - name: Install Feeds
       run: cd openwrt && ./scripts/feeds install -a
       
-    - name: add Customer script
-      run: |
-        cd openwrt
-        mkdir -p files/www/cgi-bin
-        cp -r $GITHUB_WORKSPACE/cgi/* files/www/cgi-bin/
-        chmod +x files/www/cgi-bin/*
-      
     - name: Load Custom Configuration
       run: |
         [ -e files ] && echo '::notice title=Image Type:: 已启用files大法！' && mv -v files openwrt/files
