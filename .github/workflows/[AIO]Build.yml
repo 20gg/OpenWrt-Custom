@@ -195,7 +195,14 @@ jobs:
         grep 'ERROR:' make_download.log | xargs -i echo "::warning:: [Download Trial 2]" {}
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
+        
+    - name: add Customer script
+      run: |
+        cd openwrt
+        mkdir -p files/www/cgi-bin
+        cp -r $GITHUB_WORKSPACE/cgi/* files/www/cgi-bin/
+        chmod +x files/www/cgi-bin/*
+        
     - name: SSH Before Compile
       uses: mxschmitt/action-tmate@v3
       with:
