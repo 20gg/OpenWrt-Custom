@@ -1,7 +1,4 @@
-
-
 #!/bin/sh
-
 # ...... get_arp_info.sh .....................
 arp_info=$(/www/cgi-bin/clientsOnline.sh)
 # ...... HTTP ............ JSON
